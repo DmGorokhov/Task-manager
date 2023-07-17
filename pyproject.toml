@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "hexlet-code"
+version = "0.1.0"
+description = "task manager"
+authors = ["Dmitry Gorokhov <gorokhov86@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "task_manager"}]
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+repository = "https://github.com/DmGorokhov/python-project-52.git"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.3"
+python-dotenv = "^1.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
