@@ -6,3 +6,5 @@ dist/
 coverage.xml
 .pytest_cache/
 .env
+.idea/
+/htmlcov/

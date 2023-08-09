@@ -26,6 +26,8 @@ whitenoise = "^6.5.0"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
+django-debug-toolbar = "^4.1.0"
+coverage = "^7.2.7"
 
 [build-system]
 requires = ["poetry-core"]

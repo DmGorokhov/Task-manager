@@ -16,3 +16,12 @@ dev:
 
 lint:
 		poetry run flake8 task_manager
+
+test:
+		poetry run ./manage.py test
+
+test-cov:
+		poetry run coverage run ./manage.py test
+
+shell:
+		poetry run ./manage.py shell
