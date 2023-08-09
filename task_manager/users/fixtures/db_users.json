@@ -1,0 +1,37 @@
+[
+  {
+    "model": "users.SiteUser",
+    "pk": 1,
+    "fields": {
+      "username": "TomCat",
+      "first_name": "Tom",
+      "last_name": "Cat",
+      "password": "1111",
+      "date_joined": "2023-05-24T06:28:53.264Z"
+    }
+  },
+  {
+    "model": "users.SiteUser",
+    "pk": 2,
+    "fields": {
+      "username": "JerryMouse",
+      "first_name": "Jerry",
+      "last_name": "Mouse",
+      "password": "2222",
+      "date_joined": "2023-04-24T06:28:53.264Z"
+
+    }
+  },
+  {
+    "model": "users.SiteUser",
+    "pk": 3,
+    "fields": {
+      "username": "SnupDog",
+      "first_name": "Snup",
+      "last_name": "Dog",
+      "password": "3333",
+      "date_joined": "2023-07-24T06:28:53.264Z"
+
+    }
+  }
+]

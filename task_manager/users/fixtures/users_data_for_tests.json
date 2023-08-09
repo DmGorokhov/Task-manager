@@ -1,0 +1,32 @@
+{
+  "userdata_for_model": {
+    "username": "Great8",
+    "password": "2018",
+    "first_name": "Alex",
+    "last_name": "Ovechkin"
+  },
+  "userdata_for_form": {
+    "first_name": "Alex",
+    "last_name": "Ovechkin",
+    "username": "Great8",
+    "password1": "2018",
+    "password2": "2018"
+  },
+  "userdata_for_update": {
+    "first_name": "Iliya",
+    "last_name": "Kovalchuk",
+    "username": "Kovi",
+    "password1": "2008",
+    "password2": "2008"
+  },
+  "userdata_without_first_name": {
+    "username": "Great8",
+    "password": "2018",
+    "last_name": "Ovechkin"
+  },
+  "userdata_without_last_name": {
+    "username": "Kovi",
+    "password": "2018",
+    "first_name": "Iliya"
+  }
+}
