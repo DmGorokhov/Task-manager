@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-04 17:23+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: task_manager/templates/base.html:9
+msgid "Task Manager"
+msgstr "Менеджер задач"
+
+#: task_manager/templates/home.html:7
+msgid "Hello from Hexlet!"
+msgstr "Привет от Хекслета!"
+
+#: task_manager/templates/home.html:8
+msgid "Practical courses on programming"
+msgstr "Практические курсы по программировани"
+
+#: task_manager/templates/home.html:10
+msgid "Learn more"
+msgstr "Узнать больше"
+
+#: task_manager/templates/navigation.html:4
+msgid "Task manager"
+msgstr "Менеджер задач"
+
+#: task_manager/templates/navigation.html:11
+#: task_manager/templates/users/users_index.html:5
+msgid "Users"
+msgstr "Пользователи"
+
+#: task_manager/templates/navigation.html:15
+msgid "Statuses"
+msgstr "Статусы"
+
+#: task_manager/templates/navigation.html:16
+msgid "Labels"
+msgstr "Метки"
+
+#: task_manager/templates/navigation.html:17
+msgid "Tasks"
+msgstr "Задачи"
+
+#: task_manager/templates/navigation.html:19
+msgid "Logout"
+msgstr "Выход"
+
+#: task_manager/templates/navigation.html:22
+#: task_manager/templates/registration/login.html:6
+msgid "Login"
+msgstr "Войти"
+
+#: task_manager/templates/navigation.html:23
+#: task_manager/templates/users/user_create.html:6
+msgid "Sign Up"
+msgstr "Регистрация"
+
+#: task_manager/templates/registration/login.html:13
+msgid "Log in"
+msgstr "Вход"
+
+#: task_manager/templates/users/user_create.html:13
+msgid "SignUp"
+msgstr "Зарегистрировать"
+
+#: task_manager/templates/users/user_delete.html:6
+msgid "Delete user"
+msgstr "Удаление пользователя"
+
+#: task_manager/templates/users/user_delete.html:10
+msgid "Are you sure you want to delete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: task_manager/templates/users/user_delete.html:14
+msgid "Yes, delete"
+msgstr "Да, удалить"
+
+#: task_manager/templates/users/user_update.html:6
+msgid "Update user"
+msgstr "Изменение пользователя"
+
+#: task_manager/templates/users/user_update.html:13
+msgid "Update"
+msgstr "Изменить"
+
+#: task_manager/templates/users/users_index.html:14
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: task_manager/templates/users/users_index.html:15
+msgid "Fullname"
+msgstr "Полное имя"
+
+#: task_manager/templates/users/users_index.html:16
+msgid "Created date"
+msgstr "Дата создания"
+
+#: task_manager/templates/users/users_index.html:28
+msgid "Edit"
+msgstr "Изменить"
+
+#: task_manager/templates/users/users_index.html:30
+msgid "Delete"
+msgstr "Удалить"
+
+#: task_manager/users/mixins.py:8 task_manager/views.py:19
+msgid "You are logged out"
+msgstr "Вы разлогинены"
+
+#: task_manager/users/mixins.py:16
+msgid "You have no rights to change another user."
+msgstr "У вас нет прав для изменения другого пользователя."
+
+#: task_manager/users/models.py:9
+msgid "first name"
+msgstr "Имя"
+
+#: task_manager/users/models.py:10
+msgid "last name"
+msgstr "Фамилия"
+
+#: task_manager/users/views.py:27
+msgid "User is successfully registered"
+msgstr "Пользователь успешно зарегистрирован"
+
+#: task_manager/users/views.py:35
+msgid "User is successfully updated"
+msgstr "Пользователь успешно изменен"
+
+#: task_manager/users/views.py:42
+msgid "User is successfully deleted"
+msgstr "Пользователь успешно удален"
+
+#: task_manager/views.py:14
+msgid "You are logged in"
+msgstr "Вы залогинены"
