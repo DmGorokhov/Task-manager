@@ -125,5 +125,5 @@ class TestUserCRUD(TestCase, MixinForTests):
 
         response_delete_other_user = self.client.get(
             reverse_lazy('users:user_delete', kwargs={'pk': 2}))
-        self.assertRedirects(response_update_other_user, reverse_lazy('users:users_list'))
-        self.assert_flashmessage(response_update_other_user, err_message)
+        self.assertRedirects(response_delete_other_user, reverse_lazy('users:users_list'))
+        self.assert_flashmessage(response_delete_other_user, err_message)
