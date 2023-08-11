@@ -5,7 +5,8 @@ from django.views.generic import ListView
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from .models import SiteUser
-from task_manager.mixins.mixins import LoginRequiredMixinWithFlash, IsOwnerOnlyMixin
+from task_manager.mixins.mixins import (LoginRequiredMixinWithFlash,
+                                        IsOwnerOnlyMixin)
 
 
 # Create your views here.

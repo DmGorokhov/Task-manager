@@ -7,7 +7,8 @@ class SiteUserTest(TestCase):
 
     def setUp(self):
         self.userdata = get_fixture_data('users_data_for_tests.json', 'users')
-        self.user = SiteUser.objects.create_user(**self.userdata["userdata_for_model"])
+        self.user = SiteUser.objects.create_user(
+            **self.userdata["userdata_for_model"])
 
     def test_user_creation(self):
         """Test that a user is created successfully."""
@@ -37,7 +38,8 @@ class SiteUserTest(TestCase):
         params_with_no_first_name = self.userdata["userdata_without_first_name"]
         with self.assertRaises(ValueError) as first_name_error:
             SiteUser.objects.create_user(params_with_no_first_name)
-        self.assertEqual(str(first_name_error.exception), "The first_name and last_name must be set")
+        self.assertEqual(str(first_name_error.exception),
+                         "The first_name and last_name must be set")
 
         params_with_no_last_name = self.userdata["userdata_without_last_name"]
         with self.assertRaises(ValueError):

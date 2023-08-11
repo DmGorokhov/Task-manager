@@ -7,9 +7,11 @@ from django.utils.translation import gettext_lazy as _
 
 class SiteUserManage(UserManager):
 
-    def create_user(self, username, email=None, password=None, first_name=None, last_name=None, **extra_fields):
+    def create_user(self, username, email=None, password=None,
+                    first_name=None, last_name=None, **extra_fields):
         """
-        Override build-in method for add last_name and first_name ad required fields
+        Override build-in method for
+        add last_name and first_name ad required fields
         """
         if not first_name or not last_name:
             raise ValueError("The first_name and last_name must be set")

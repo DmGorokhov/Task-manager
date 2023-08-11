@@ -3,7 +3,7 @@ from django.test import TestCase
 from task_manager.users.models import SiteUser
 from task_manager.utils import get_fixture_data
 from django.urls import reverse_lazy
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from task_manager.mixins.mixins_for_tests import MixinForTests
 
 
@@ -14,9 +14,12 @@ class TestUserCRUD(TestCase, MixinForTests):
         self.userdata = get_fixture_data('users_data_for_tests.json', 'users')
 
     def assertSiteUser(self, user_from_db, user_form_posted_data):
-        self.assertEqual(user_from_db.__str__(), user_form_posted_data['username'])
-        self.assertEqual(user_from_db.first_name, user_form_posted_data['first_name'])
-        self.assertEqual(user_from_db.last_name, user_form_posted_data['last_name'])
+        self.assertEqual(user_from_db.__str__(),
+                         user_form_posted_data['username'])
+        self.assertEqual(user_from_db.first_name,
+                         user_form_posted_data['first_name'])
+        self.assertEqual(user_from_db.last_name,
+                         user_form_posted_data['last_name'])
 
     def test_users_list(self):
         response = self.client.get(reverse_lazy('users:users_list'))
@@ -91,7 +94,8 @@ class TestUserCRUD(TestCase, MixinForTests):
         self.assertEqual(response_update_page.status_code, 200)
         self.assertTemplateUsed(response_update_page, 'users/user_delete.html')
 
-        response = self.client.post(reverse_lazy('users:user_delete', kwargs={'pk': 1}))
+        response = self.client.post(reverse_lazy('users:user_delete',
+                                                 kwargs={'pk': 1}))
         self.assert_flashmessage(response, _('User is successfully deleted'))
         self.assertRedirects(response, reverse_lazy('users:users_list'))
 
@@ -120,10 +124,12 @@ class TestUserCRUD(TestCase, MixinForTests):
         self.client.force_login(exist_user)
         response_update_other_user = self.client.get(
             reverse_lazy('users:user_delete', kwargs={'pk': 2}))
-        self.assertRedirects(response_update_other_user, reverse_lazy('users:users_list'))
+        self.assertRedirects(response_update_other_user,
+                             reverse_lazy('users:users_list'))
         self.assert_flashmessage(response_update_other_user, err_message)
 
         response_delete_other_user = self.client.get(
             reverse_lazy('users:user_delete', kwargs={'pk': 2}))
-        self.assertRedirects(response_delete_other_user, reverse_lazy('users:users_list'))
+        self.assertRedirects(response_delete_other_user,
+                             reverse_lazy('users:users_list'))
         self.assert_flashmessage(response_delete_other_user, err_message)
