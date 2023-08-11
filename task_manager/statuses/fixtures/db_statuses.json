@@ -1,0 +1,29 @@
+[
+  {
+    "model": "statuses.status",
+    "pk": 1,
+    "fields": {
+      "name": "active",
+      "created_at": "2023-07-12T14:28:30.456Z",
+      "updated_at": "2023-07-12T14:28:30.456Z"
+    }
+  },
+  {
+    "model": "statuses.status",
+    "pk": 2,
+    "fields": {
+      "name": "in process",
+      "created_at": "2023-10-12T14:28:30.456Z",
+      "updated_at": "2023-10-12T14:28:30.456Z"
+    }
+  },
+  {
+    "model": "statuses.status",
+    "pk": 3,
+    "fields": {
+      "name": "completed",
+      "created_at": "2023-09-12T12:28:30.456Z",
+      "updated_at": "2023-09-12T12:28:30.456Z"
+    }
+  }
+]
