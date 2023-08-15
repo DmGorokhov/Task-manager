@@ -1,0 +1,10 @@
+{
+  "taskdata_for_model": {
+    "name": "New_task",
+    "description": "This is task for tests"
+  },
+  "taskdata_for_update": {
+    "name": "Updated_task",
+    "description": "This is new version of old task"
+  }
+}

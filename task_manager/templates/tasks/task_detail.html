@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block header %}
+{% translate "Task view" %}
+{% endblock %}
+
+
+{% block content %}
+<div class="card">
+    <div class="card-header bg-secondary text-white">
+        <h2>{{ task.name }}</h2>
+    </div>
+    <div class="card-body bg-light">
+        <p>{{ task.description }}</p>
+        <hr>
+        <div class="container">
+            <div class="row p-1">
+                <div class="col">{% translate "Author" %}</div>
+                <div class="col">{{ task.author }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">{% translate "Executor" %}</div>
+                {% if task.executor %}
+                <div class="col">{{ task.executor }}</div>
+                {% endif %}
+            </div>
+            <div class="row p-1">
+                <div class="col">{% translate "Status" %}</div>
+                <div class="col">{{ task.status }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">{% translate "Created date" %}</div>
+                <div class="col">{{ task.created_at|date:"d.m.Y H:i" }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">
+                    <h6>{% translate "Labels" %}:</h6>
+                    <ul>
+                        <li></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col">
+                    <a href="{% url 'tasks:task_update' task.id %}">{% translate "Edit" %}</a>
+                    <br>
+                    <a href="{% url 'tasks:task_delete' task.id %}">{% translate "Delete" %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

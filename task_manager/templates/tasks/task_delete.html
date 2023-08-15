@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n django_bootstrap5  %}
+
+
+{% block header %}
+{% translate "Delete status" %}
+{% endblock %}
+
+{% block content %}
+<p>{% translate "Are you sure you want to delete" %} {{ task.name }}?</p>
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button class="btn btn-danger" type="submit">{% translate "Yes, delete" %}</button>
+</form>
+{% endblock%}

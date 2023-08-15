@@ -14,7 +14,7 @@
             {% if user.is_authenticated %}
             <li class="nav-item"><a class="nav-link" href="{% url 'statuses:statuses_list' %}">{% translate "Statuses" %}</a></li>
             <li class="nav-item"><a class="nav-link" href="/">{% translate "Labels" %}</a></li>
-            <li class="nav-item"><a class="nav-link" href="/">{% translate "Tasks" %}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'tasks:tasks_list' %}">{% translate "Tasks" %}</a></li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout' %}">{% translate "Logout" %}</a>
             </li>
