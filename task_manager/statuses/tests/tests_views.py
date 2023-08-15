@@ -46,7 +46,7 @@ class TestStatusCRUD(TestCase, MixinForTests):
                                     test_post_request=True,
                                     data_for_post=add_status)
 
-    def test_create_status_with_validation_errors(self):
+    def test_create_status_with_invalid_params(self):
         empty_status = {'name': ''}
         response = self.client.post(reverse_lazy('statuses:status_create'),
                                     empty_status)
@@ -69,7 +69,7 @@ class TestStatusCRUD(TestCase, MixinForTests):
         updated_status = Status.objects.get(pk=1)
         self.assertEqual(updated_status.__str__(), new_status['name'])
 
-    def test_update_status_with_validation_errors(self):
+    def test_update_status_with_invalid_params(self):
         empty_status = {'name': ''}
         response = self.client.post(
             reverse_lazy('statuses:status_update', kwargs={'pk': 1}),

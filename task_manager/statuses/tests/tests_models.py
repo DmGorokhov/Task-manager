@@ -9,7 +9,7 @@ class TestStatusModel(TestCase):
         self.status = Status.objects.create(name='complete')
 
     def test_status_creation(self):
-        """Test that a user is created successfully."""
+        """Test that a status is created successfully."""
         self.assertEqual(self.status.name, 'complete')
 
     def test_status_string_representation(self):
@@ -17,7 +17,7 @@ class TestStatusModel(TestCase):
         self.assertEqual(str(self.status), 'complete')
 
     def test_status_fields(self):
-        """Test the required fields of the user model."""
+        """Test the required fields of the status model."""
         self.assertFalse(self.status._meta.get_field('name').blank)
         self.assertEqual(self.status._meta.get_field('name').null, False)
 
