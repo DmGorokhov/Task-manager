@@ -43,7 +43,7 @@ class TestUserCRUD(TestCase, MixinForTests):
         created_user = SiteUser.objects.get(username=new_user['username'])
         self.assertSiteUser(created_user, new_user)
 
-    def test_create_user_with_validation_errors(self):
+    def test_create_user_with_invalid_params(self):
         new_user = self.userdata["userdata_for_form"]
         new_user['first_name'], new_user['last_name'] = ('', '')
         response = self.client.post(reverse_lazy('users:user_create'), new_user)
@@ -72,7 +72,7 @@ class TestUserCRUD(TestCase, MixinForTests):
         updated_user = SiteUser.objects.get(pk=1)
         self.assertSiteUser(updated_user, new_user_data)
 
-    def test_update_user_with_validation_errors(self):
+    def test_update_user_with_invalid_params(self):
         exist_user = SiteUser.objects.get(pk=1)
         new_user = self.userdata["userdata_for_form"]
         new_user['first_name'], new_user['last_name'] = ('', '')
