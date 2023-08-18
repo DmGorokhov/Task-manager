@@ -63,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
+
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
@@ -73,13 +75,13 @@ if DEBUG:
         'debug_toolbar',
     ]
 
-    MIDDLEWARE += [
-        'debug_toolbar.middleware.DebugToolbarMiddleware',
-    ]
+MIDDLEWARE += [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+]
 
-    INTERNAL_IPS = [
-        '127.0.0.1',
-    ]
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 
 TEMPLATES = [
     {
@@ -197,4 +199,11 @@ BOOTSTRAP5 = {
         "crossorigin": "anonymous",
     },
     'javascript_in_head': True,
+}
+POST_SERVER_ITEM_ACCESS_TOKEN = os.getenv("POST_SERVER_ITEM_ACCESS_TOKEN")
+ROLLBAR = {
+    'access_token': POST_SERVER_ITEM_ACCESS_TOKEN,
+    'environment': 'development' if DEBUG else 'production',
+    'code_version': '1.0',
+    'root': BASE_DIR,
 }
