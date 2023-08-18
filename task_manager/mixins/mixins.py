@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
+from django.db.models import ProtectedError
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
@@ -25,3 +26,15 @@ class IsOwnerOnlyMixin(UserPassesTestMixin):
     def handle_no_permission(self):
         messages.error(self.request, self.err_message)
         return redirect(reverse_lazy(self.error_redirect_url))
+
+
+class DeleteProtectedMixin:
+    rejection_message = ''
+    rejection_redirect_url = ''
+
+    def post(self, request, *args, **kwargs):
+        try:
+            return super().post(request, *args, **kwargs)
+        except ProtectedError:
+            messages.error(request, self.rejection_message)
+            return redirect(reverse_lazy(self.rejection_redirect_url))
