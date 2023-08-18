@@ -2,6 +2,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.test import TestCase
 from task_manager.statuses.models import Status
 from task_manager.users.models import SiteUser
+from task_manager.tasks.models import Task
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from task_manager.mixins.mixins_for_tests import MixinForTests
@@ -13,6 +14,7 @@ class TestStatusCRUD(TestCase, MixinForTests):
     @classmethod
     def setUpTestData(cls):
         cls.user = SiteUser.objects.get(pk=1)
+        cls.task = Task.objects.all().first()
 
     def setUp(self) -> None:
         """User should be logged in for each of CRUD operation."""
@@ -109,6 +111,3 @@ class TestStatusCRUD(TestCase, MixinForTests):
         self.assertEqual(response_update_page.status_code, 302)
         self.assertRedirects(response_update_page, reverse_lazy('login'))
         self.assert_flashmessage(response_update_page, message)
-
-# def test_denied_delete_status_with_task(self):
-#     pass
