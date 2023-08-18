@@ -23,5 +23,9 @@ test:
 test-cov:
 		poetry run coverage run ./manage.py test
 
+test-coverage:
+		poetry run coverage run --source="task_manager" manage.py test task_manager
+		poetry run coverage xml
+
 shell:
 		poetry run ./manage.py shell
