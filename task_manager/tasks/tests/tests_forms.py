@@ -10,7 +10,8 @@ class TestTaskForm(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        cls.form_fields = ['name', 'description', 'status', 'executor']
+        cls.form_fields = ['name', 'description', 'status',
+                           'executor', 'labels']
         cls.user = SiteUser.objects.get(pk=1)
         cls.status = Status.objects.get(pk=2)
         cls.executor = SiteUser.objects.get(pk=2)
@@ -18,10 +19,10 @@ class TestTaskForm(TestCase):
 
     def test_create_form_fields(self):
         form_data = {'status': self.status.id, 'executor': self.executor.id,
-                     **self.taskdata["taskdata_for_model"]
+                     'labels': '', **self.taskdata["taskdata_for_model"]
                      }
         form = TaskForm(form_data)
-        self.assertEqual(len(form.fields), 4)
+        self.assertEqual(len(form.fields), 5)
         for field in self.form_fields:
             self.assertIn(field, form.fields)
         self.assertFormError(form, 'name', [])

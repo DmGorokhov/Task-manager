@@ -1,4 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import ProtectedError
 from django.test import TestCase
 from task_manager.statuses.models import Status
 from task_manager.users.models import SiteUser
@@ -58,6 +59,7 @@ class TestTaskCRUD(TestCase, MixinForTests):
         self.assertEqual(context.author, current_task.author)
         self.assertEqual(context.executor, current_task.executor)
         self.assertEqual(context.status, current_task.status)
+        self.assertEqual(context.labels, current_task.labels)
         self.assertEqual(context.created_at, current_task.created_at)
 
     def test_create_task(self):
@@ -166,3 +168,7 @@ class TestTaskCRUD(TestCase, MixinForTests):
 
         self.assertRedirects(response, reverse_lazy('tasks:tasks_list'))
         self.assert_flashmessage(response, err_message)
+
+    def test_status_delete_protected(self):
+        with self.assertRaises(ProtectedError):
+            self.status.delete()

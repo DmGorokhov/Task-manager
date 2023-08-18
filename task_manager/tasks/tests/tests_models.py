@@ -26,6 +26,7 @@ class TestTaskModel(TestCase):
         self.assertEqual(new_task.description, 'This is task for tests')
         self.assertEqual(new_task.author, self.user)
         self.assertEqual(new_task.executor, self.user_executor)
+        self.assertEqual(new_task.labels.all().count(), 0)
         new_task.executor = None
         self.assertEqual(new_task.executor, None)
         self.assertEqual(str(new_task), 'New_task')
@@ -60,7 +61,7 @@ class TestTaskModel(TestCase):
                                 **self.taskdata['taskdata_for_model'])
 
     def test_task_foreignkeys(self):
-        new_task = Task.objects.create(author=self.user, status=self.status, # noqa F841
+        new_task = Task.objects.create(author=self.user, status=self.status,  # noqa F841
                                        executor=self.user_executor,
                                        **self.taskdata['taskdata_for_model'])
 

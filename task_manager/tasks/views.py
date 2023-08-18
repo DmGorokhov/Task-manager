@@ -2,18 +2,21 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import (CreateView, UpdateView,
-                                  DeleteView, ListView, DetailView)
+                                  DeleteView, DetailView)
 
 from task_manager.mixins.mixins import (LoginRequiredMixinWithFlash,
                                         IsOwnerOnlyMixin)
+from .filters import TaskFilter
 from .forms import TaskForm
 from .models import Task
+from django_filters.views import FilterView
 
 
-class TasksListView(LoginRequiredMixinWithFlash, ListView):
+class TasksFilterView(LoginRequiredMixinWithFlash, FilterView):
     model = Task
     context_object_name = 'tasks_list'
     template_name = 'tasks/tasks_index.html'
+    filterset_class = TaskFilter
 
     def get_queryset(self):
         return super().get_queryset().order_by('created_at')
