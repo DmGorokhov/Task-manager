@@ -3,6 +3,9 @@ name: CI
 on:
   - push
 
+env:
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
