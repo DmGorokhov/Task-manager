@@ -76,6 +76,17 @@ django = ">=3.2.4"
 sqlparse = ">=0.2"
 
 [[package]]
+name = "django-filter"
+version = "23.2"
+description = "Django-filter is a reusable Django application for allowing users to filter querysets dynamically."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "flake8"
 version = "6.0.0"
 description = "the modular source code checker: pep8 pyflakes and co"
@@ -204,7 +215,7 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "815467582c1c205cc8e0b1f4ce9abfaa0c0977950e70140731654f0554b3307b"
+content-hash = "62bae04b2c10f2c4328787d37142818e7602688c23a3063f14554715acc7ff82"
 
 [metadata.files]
 asgiref = [
@@ -288,6 +299,10 @@ django-bootstrap5 = [
 django-debug-toolbar = [
     {file = "django_debug_toolbar-4.1.0-py3-none-any.whl", hash = "sha256:a0b532ef5d52544fd745d1dcfc0557fa75f6f0d1962a8298bd568427ef2fa436"},
     {file = "django_debug_toolbar-4.1.0.tar.gz", hash = "sha256:f57882e335593cb8e74c2bda9f1116bbb9ca8fc0d81b50a75ace0f83de5173c7"},
+]
+django-filter = [
+    {file = "django-filter-23.2.tar.gz", hash = "sha256:2fe15f78108475eda525692813205fa6f9e8c1caf1ae65daa5862d403c6dbf00"},
+    {file = "django_filter-23.2-py3-none-any.whl", hash = "sha256:d12d8e0fc6d3eb26641e553e5d53b191eb8cec611427d4bdce0becb1f7c172b5"},
 ]
 flake8 = [
     {file = "flake8-6.0.0-py2.py3-none-any.whl", hash = "sha256:3833794e27ff64ea4e9cf5d410082a8b97ff1a06c16aa3d2027339cd0f1195c7"},
