@@ -258,7 +258,7 @@ msgstr "Выход"
 #: task_manager/templates/navigation.html:22
 #: task_manager/templates/registration/login.html:6 task_manager/tests.py:17
 msgid "Login"
-msgstr "Войти"
+msgstr "Вход"
 
 #: task_manager/templates/navigation.html:23
 #: task_manager/templates/users/user_create.html:6 task_manager/tests.py:18
