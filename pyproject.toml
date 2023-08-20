@@ -24,11 +24,12 @@ django-bootstrap5 = "^23.3"
 whitenoise = "^6.5.0"
 django-filter = "^23.2"
 rollbar = "^0.16.3"
+django-debug-toolbar = "^4.1.0"
+
 
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
-django-debug-toolbar = "^4.1.0"
 coverage = "^7.2.7"
 
 [build-system]
