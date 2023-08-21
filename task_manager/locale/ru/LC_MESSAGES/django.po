@@ -129,11 +129,9 @@ msgstr "Статус"
 
 #: task_manager/tasks/models.py:25
 msgid "executor"
-msgstr "исполнитель"
+msgstr "Исполнитель"
 
 #: task_manager/tasks/models.py:32
-#, fuzzy
-#| msgid "Labels"
 msgid "labels"
 msgstr "Метки"
 
@@ -171,10 +169,8 @@ msgstr "Узнать больше"
 
 #: task_manager/templates/labels/label_create.html:6
 #: task_manager/templates/labels/labels_index.html:10
-#, fuzzy
-#| msgid "Created date"
 msgid "Create label"
-msgstr "Дата создания"
+msgstr "Создать метку"
 
 #: task_manager/templates/labels/label_create.html:13
 #: task_manager/templates/statuses/status_create.html:13
