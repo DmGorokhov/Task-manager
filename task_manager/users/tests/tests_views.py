@@ -14,8 +14,10 @@ class TestUserCRUD(TestCase, MixinForTests):
         self.userdata = get_fixture_data('users_data_for_tests.json', 'users')
 
     def assertSiteUser(self, user_from_db, user_form_posted_data):
-        self.assertEqual(user_from_db.__str__(),
-                         user_form_posted_data['username'])
+        user_fullname = (f'{user_form_posted_data["first_name"]} '
+                         f'{user_form_posted_data["last_name"]}')
+
+        self.assertEqual(user_from_db.__str__(), user_fullname)
         self.assertEqual(user_from_db.first_name,
                          user_form_posted_data['first_name'])
         self.assertEqual(user_from_db.last_name,

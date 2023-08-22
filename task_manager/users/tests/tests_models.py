@@ -20,7 +20,7 @@ class SiteUserTest(TestCase):
 
     def test_user_string_representation(self):
         """Test that the user string representation is correct."""
-        self.assertEqual(str(self.user), 'Great8')
+        self.assertEqual(str(self.user), 'Alex Ovechkin')
 
     def test_user_fields(self):
         """Test the required fields of the user model."""
