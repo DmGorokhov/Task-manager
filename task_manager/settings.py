@@ -31,8 +31,6 @@ ALLOWED_HOSTS = ['webserver',
                  '.onrender.com',
                  'localhost',
                  '127.0.0.1',
-                 '[::1]',
-                 '0.0.0.0',
                  ]
 
 # Application definition
@@ -126,12 +124,6 @@ DATABASES['default'].update(db_from_env)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        #     'NAME': (
-        #         'django.contrib.auth.password_validation.'
-        #         'UserAttributeSimilarityValidator'
-        #     ),
-        # },
-        # {
         'NAME': (
             'django.contrib.auth.password_validation.'
             'MinimumLengthValidator'),
@@ -139,18 +131,6 @@ AUTH_PASSWORD_VALIDATORS = [
             'min_length': 3,
         },
     },
-    # {
-    #     'NAME': (
-    #         'django.contrib.auth.password_validation.'
-    #         'CommonPasswordValidator'
-    #     ),
-    # },
-    # {
-    #     'NAME': (
-    #         'django.contrib.auth.password_validation.'
-    #         'NumericPasswordValidator'
-    #     ),
-    # },
 ]
 
 # Internationalization
