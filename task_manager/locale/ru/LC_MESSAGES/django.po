@@ -161,7 +161,7 @@ msgstr "Привет от Хекслета!"
 
 #: task_manager/templates/home.html:8
 msgid "Practical courses on programming"
-msgstr "Практические курсы по программировани"
+msgstr "Практические курсы по программированию"
 
 #: task_manager/templates/home.html:10
 msgid "Learn more"
