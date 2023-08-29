@@ -7,8 +7,9 @@
 
 
 {% block content %}
-<a class="nav-link" href="{% url 'statuses:status_create' %}">{% translate "Create status" %}</a>
-
+<p>
+    <a class="btn btn-primary" href="{% url 'statuses:status_create' %}">{% translate "Create status" %}</a>
+</p>
 <table class="table table-striped">
     <thead>
     <tr>

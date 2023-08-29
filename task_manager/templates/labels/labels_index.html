@@ -7,8 +7,9 @@
 
 
 {% block content %}
-<a class="nav-link" href="{% url 'labels:label_create' %}">{% translate "Create label" %}</a>
-
+<p>
+    <a class="btn btn-primary" href="{% url 'labels:label_create' %}">{% translate "Create label" %}</a>
+</p>
 <table class="table table-striped">
     <thead>
     <tr>

@@ -7,7 +7,10 @@
 
 
 {% block content %}
-<a class="nav-link" href="{% url 'tasks:task_create' %}">{% translate "Create task" %}</a>
+<p>
+    <a class="btn btn-primary" href="{% url 'tasks:task_create' %}">{% translate "Create task" %}</a>
+</p>
+
 <div class="card mb-3">
     <div class="card-body bg-light">
         <form class="form-inline center" method="get">
